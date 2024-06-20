@@ -1,0 +1,314 @@
+/* Reset some basic styles */
+body, h1, h2, p, ul, li, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define custom fonts */
+@font-face {
+    font-family: 'Array';
+    src: url('fonts/Array_Cold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'generalsans';
+    src: url('fonts/GeneralSans-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'editorial';
+    src: url('fonts/PPEditorialNew-Regular-BF644b214ff145f.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'sloop';
+    src: url('fonts/sloop.ttf') format('truetype');
+}
+
+/* General body styling */
+body {
+    font-family: 'generalsans', Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    line-height: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+body.alt-font {
+    font-family: 'editorial', Arial, sans-serif;
+}
+
+body.alt-font #search,
+body.alt-font p,
+body.alt-font button,
+body.alt-font #suggestions li {
+    font-family: 'editorial', Arial, sans-serif;
+}
+
+/* Container to center content */
+.container {
+    text-align: center;
+}
+
+/* Header and Navigation styling */
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-family: 'Array', Arial, sans-serif;
+    font-size: 5em;
+    margin-bottom: 10px;
+}
+
+#search {
+    font-family: 'generalsans', Arial, sans-serif;
+    padding: 10px;
+    width: 80%;
+    max-width: 550px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Add some space below the search bar */
+}
+
+#suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 10px auto;
+    display: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+    position: absolute;
+}
+
+#suggestions.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#suggestions.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+#suggestions li {
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    padding-top: 20px;
+    display: inline-flex;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+/* Section 1 - Horizontal Layout */
+.section1 {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.section1 h2 {
+    font-family: 'Array', Arial, sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.section1 p {
+    font-family: 'generalsans', Arial, sans-serif;
+    margin-bottom: 20px; /* Add some space between the paragraph and the button */
+}
+
+/* Buttons styling */
+button {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-family: 'generalsans', Arial, sans-serif;
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Add space between buttons */
+}
+
+button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#homeButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px; /* Smaller padding */
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    max-width: 100px;
+    font-family: 'generalsans', Arial, sans-serif;
+    cursor: pointer;
+    font-size: 0.8em; /* Smaller font size */
+}
+
+#homeButton:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Section 3 - Code Editor */
+.section3 h2 {
+    text-align: center; /* Center text */
+    margin-top: -120px; /* Move header up by 50 pixels */
+}
+
+.section3 textarea {
+    font-family: monospace; /* Use monospace font for code */
+    padding: 10px;
+    width: 400%;
+    max-width: 700px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    resize: vertical; /* Allow vertical resizing */
+    position: absolute; /* Position the textarea absolutely */
+    left: 50%; /* Move left edge to the center */
+    top: calc(50% + 20px); /* Move top edge to the center with additional 20px */
+    transform: translate(-50%, -50%); /* Center the textarea */
+}
+
+/* Section 2 - Sheet Music Tools */
+.section2 {
+    text-align: center;
+    padding: 20px;
+}
+
+.section2 h2 {
+    font-family: 'Array', Arial, sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.section2 p {
+    font-family: 'generalsans', Arial, sans-serif;
+    margin-bottom: 20px; /* Add some space between the paragraph and the button */
+}
+
+#pdfSelector {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-family: 'generalsans', Arial, sans-serif;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+#pdfViewer {
+    border: 1px solid #000;
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 20px;
+}
+
+#scrollSpeed {
+    margin: 10px 0;
+}
+
+/* Gallery Section */
+.gallery {
+    text-align: center;
+    padding: 20px;
+	height: 100vh;
+    overflow: auto; /* Ensure content is visible if it overflows */
+}
+
+.gallery h2 {
+    font-family: 'Array', Arial, sans-serif;
+    font-size: 2em;
+    margin-bottom: -10px;
+    width: 100%;
+}
+
+
+
+.gallery #galleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery .picture {
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: calc(25% - 40px); /* Adjusted width to fit 4 per row with margins */
+    box-sizing: border-box;
+}
+
+.gallery .picture img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+/* Shake animation for search bar */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.shake {
+    animation: shake 0.5s;
+}

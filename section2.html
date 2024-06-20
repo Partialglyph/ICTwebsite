@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheet Music Tools</title>
+    <link rel="icon" type="image/x-icon" href="favicon2.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="homeButton" onclick="goHome()">Home</button>
+    <main class="section2">
+        <h2>Sheet Music Tools</h2>
+        <p>Select a PDF to view:</p>
+        <select id="pdfSelector" onchange="loadPDF(this.value)">
+            <option value="music/abc.pdf">Bach</option>
+            <option value="music/cdl.pdf">Debussy</option>
+            <option value="music/vcd.pdf">Tchaikovsky</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br>
+        <iframe id="pdfViewer" src="" width="80%" height="80vh"></iframe>
+        <br>
+        <label for="scrollSpeed">Scroll Speed: </label>
+        <input type="range" id="scrollSpeed" min="1" max="10" value="5" oninput="adjustScrollSpeed(this.value)">
+        <br>
+        <button onclick="startScrolling()">Start Scrolling</button>
+        <button onclick="stopScrolling()">Stop Scrolling</button>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
